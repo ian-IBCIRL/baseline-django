@@ -129,6 +129,13 @@ Here is the version history:
 
 To install django, `pip3 install 'django<4' gunicorn`
 
+This also installs the gunicorn. Gunicorn (‘Green Unicorn’) is a pure-Python WSGI server for UNIX. It has no dependencies and can be installed using pip.
+https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/gunicorn/
+
+A Web Server Gateway Interface (WSGI) server implements the web server side of the WSGI interface for running Python web applications.
+https://www.fullstackpython.com/wsgi-servers.html 
+
+You may also want to install the following packages for the database and storage in Cloudinary.
 and `pip3 install dj_database_url==0.5.0 psycopg2`
 and `pip3 install dj3-cloudinary-storage`
 
@@ -137,12 +144,14 @@ with `pip3 freeze > requirements.txt`
 
 and reload them with `pip3 install -r requirements.txt` 
 
+### Initiating the Django project files
 To create the essential manage.py file and the key step in enabling the site to launch
-use `django-admin startproject "put your appname here" .` don't forget the DOT at the end !!
-We used driverblog for our blog about cars and other vehicles.
-Don't forget the DOT at the end as this tells Django admin that we want to create our project in the current top level folder
+use `django-admin startproject "put your appname here" .` DON'T forget the DOT at the end !!
 
-Then use `python3 manage.py startapp vehicles` for example, to create the vehicles app within the driverblog project
+We used garageblog for our blog about cars and other vehicles. Here we use `boutique-ado`
+Don't forget the DOT at the end as this tells Django admin that we want to create our project in the current top level folder.
+
+Then use `python3 manage.py startapp vehicles` for example, to create the vehicles app within the project
 And we update `settings.py` with details for the apps, hosts and secrets etc.
 
 Use `python3 manage.py runserver` to launch web server
