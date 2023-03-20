@@ -1,28 +1,181 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome ian-IBCIRL,
+Welcome  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This is the Code Institute student PP5 walkthrough Boutique Ado readme for the project deployed to [https://ib-pp5-ado.herokuapp.com/](https://ib-pp5-ado.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Note: To open any links in this README in a new browser tab, press CTRL + Click or right click and open in new tab/window.
 
-## Gitpod Reminders
+# Boutique Ado
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### By [Ian Bowell](https://www.instagram.com/skianianiam/)
 
-`python3 -m http.server`
+## **[Live site](https://ib-pp5-ado.herokuapp.com/)**
 
-A blue button should appear to click: _Make Public_,
+---
 
-Another blue button should appear to click: _Open Browser_.
+## Table of Contents
+* [Features](#features)
+* [Future Enhancements](#future-enhancements)
+* [Technologies Used](#technologies-used)
+* [Agile Development](#agile-development)
+* [Testing](#testing)
+* [User Experience Design (UX)](#ux)
+* [Deployment](#deployment)
+* [Release History](#release-history)
+* [Credits](#credits)
+* [Reminders](#reminders)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Introduction
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+Boutique Ado is a website built in Django using Python, JavaScript, CSS and HTML. 
+
+## Features
+
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+Features here
+
+## Future Enhancements
+
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+Future Enhancements here
+
+## Technologies Used
+
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+Technologies used here
+
+## Agile Development
+
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+Agile here
+
+## Testing
+
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+Testing here
+
+## UX
+
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+UX here
+
+## Deployment
+
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+Deployment here
+
+
+## Release History
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#the-garage) 
+
+We continually tweak and adjust this.
+
+Here is the version history:
+
+**20 March 2023:** Begin MVP planning.
+
+**04 April 2023:** Successful initial heroku deployment.
+
+**20 April 2023:** Successful initial post deletion logic. Needs more checks and post editing/adding.
+
+**20 May 2023:** Successful deployment of submission features.
+
+**16 June 2023:** Final deployment of submission features, following further documentation and testing.
+
+------
+
+
+## Credits
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+
+-   ### Source code
+
+    - Code Institute Django course material, tutors, mentors and colleagues in Slack channels.
+    - Bootstrap documentation https://getbootstrap.com/docs/5.3/getting-started/introduction/ 
+    
+-   ### Images
+    - Car images https://www.pexels.com/ 
+    - favicon.ico generation https://favicon.io/favicon-generator/
+    - Colors from [Lilybug Design](https://www.lilybugdesign.co.nz/procreate-color-palettes)
+
+
+## Reminders
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
+
+To install django, `pip3 install 'django<4' gunicorn`
+
+and `pip3 install dj_database_url==0.5.0 psycopg2`
+and `pip3 install dj3-cloudinary-storage`
+
+Once all is installed, you can record the installed packages to requirements.txt 
+with `pip3 freeze > requirements.txt`
+
+and reload them with `pip3 install -r requirements.txt` 
+
+To create the essential manage.py file and the key step in enabling the site to launch
+use `django-admin startproject "put your appname here" .` don't forget the DOT at the end !!
+We used driverblog for our blog about cars and other vehicles.
+Don't forget the DOT at the end as this tells Django admin that we want to create our project in the current top level folder
+
+Then use `python3 manage.py startapp vehicles` for example, to create the vehicles app within the driverblog project
+And we update `settings.py` with details for the apps, hosts and secrets etc.
+
+Use `python3 manage.py runserver` to launch web server
+
+```
+python3 manage.py runserver
+```
+
+We add the app with `python3 manage.py startapp blog` for example
+
+Then we need to migrate the changes to the database etc with `python3 manage.py migrate`
+
+Remember to update settings.py with all the env vars for secure access to Django and the Elephant DB in the database section
+
+```
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+import env
+```
+
+To set up a app/database admin we need `python3 manage.py createsuperuser`
+
+To install the app in Heroku you need:
+
+1) Environment variables from env.py in your Heroku app settings
+2) A Procfile to run the webserver i.e. `web: gunicorn driverblog.wsgi` 
+    
+    in this case to run my driverblog app on the gunicorn wsgi webserver.
+
+Remember also to `python manage.py collectstatic`
+
+The project can now be deployed to Heroku at the website configured above.
 
 To log into the Heroku toolbelt CLI:
 
@@ -34,75 +187,13 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
 **Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Yes! We'd strongly encourage you to look at the source code!
 
 ---
 
 Happy coding!
+* [Back to table of contents](#table-of-contents) 
+* [Back to top of README.md](#boutique-ado) 
