@@ -136,6 +136,7 @@ A Web Server Gateway Interface (WSGI) server implements the web server side of t
 https://www.fullstackpython.com/wsgi-servers.html 
 
 You may also want to install the following packages for the database and storage in Cloudinary.
+Psycopg is the most popular PostgreSQL database adapter for the Python programming language.
 and `pip3 install dj_database_url==0.5.0 psycopg2`
 and `pip3 install dj3-cloudinary-storage`
 
@@ -152,9 +153,13 @@ We used garageblog for our blog about cars and other vehicles. Here we use `bout
 Don't forget the DOT at the end as this tells Django admin that we want to create our project in the current top level folder.
 
 Then use `python3 manage.py startapp vehicles` for example, to create the vehicles app within the project
-And we update `settings.py` with details for the apps, hosts and secrets etc.
 
-Use `python3 manage.py runserver` to launch web server
+And we update `settings.py` with details for the apps, hosts and secrets etc.
+Remove the default SECRET_KEY secret entry in settings.py and use the env.py load method detailed below.
+
+You will also need to load the SECRET_KEY in settings.py from env.py with `SECRET_KEY = os.environ.get('SECRET_KEY')`
+
+Use `python3 manage.py runserver` to launch web server once the environment variables are all set up
 
 ```
 python3 manage.py runserver
@@ -169,8 +174,9 @@ Remember to update settings.py with all the env vars for secure access to Django
 ```
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
-import env
+    import env
 ```
 
 To set up a app/database admin we need `python3 manage.py createsuperuser`
@@ -178,9 +184,9 @@ To set up a app/database admin we need `python3 manage.py createsuperuser`
 To install the app in Heroku you need:
 
 1) Environment variables from env.py in your Heroku app settings
-2) A Procfile to run the webserver i.e. `web: gunicorn driverblog.wsgi` 
+2) A Procfile to run the webserver i.e. `web: gunicorn boutique-ado.wsgi` 
     
-    in this case to run my driverblog app on the gunicorn wsgi webserver.
+    in this case to run my boutique app on the gunicorn wsgi webserver.
 
 Remember also to `python manage.py collectstatic`
 
@@ -196,6 +202,11 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
+and to address a common pylint warning, update `.gitpod.yml` with
+```
+    - ms-toolsai.vscode-jupyter-cell-tags
+    - ms-toolsai.vscode-jupyter-slideshow
+```
 
 **Anything more?**
 
